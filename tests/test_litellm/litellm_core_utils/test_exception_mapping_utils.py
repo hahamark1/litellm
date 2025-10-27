@@ -11,9 +11,12 @@ context_window_test_cases = [
     ("Validation Error: string too long. expected a string with maximum length 1000.", True),
     ("Your prompt is longer than the model's context length of 2048.", True),
     ("AWS Bedrock Error: The request payload size has exceed context limit.", True),
+    ("Azure OpenAI: Input tokens exceed the configured limit of 4096.", True),
+    ("Error from provider: Input tokens exceed the configured limit.", True),
 
     # Test case insensitivity
     ("ERROR: THIS MODEL'S MAXIMUM CONTEXT LENGTH IS 1024.", True),
+    ("AZURE ERROR: INPUT TOKENS EXCEED THE CONFIGURED LIMIT.", True),
 
     # Negative cases (should return False)
     ("A generic API error occurred.", False),
